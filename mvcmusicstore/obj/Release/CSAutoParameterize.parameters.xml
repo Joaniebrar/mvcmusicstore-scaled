@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="MusicStoreEntities-Web.config Connection String" description="MusicStoreEntities Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:mvcmusicstoreyyc.database.windows.net,1433;Initial Catalog=MvcMusicStore;Persist Security Info=False;User ID=servadmin;Password=1q2w3e4r%T;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\juttb\\source\\repos\\MvcMusicStore\\mvcmusicstore\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MusicStoreEntities']/@connectionString" />
+  </parameter>
+  <parameter name="UserDBConnection-Web.config Connection String" description="UserDBConnection Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:mvcmusicstoreyyc.database.windows.net,1433;Initial Catalog=MvcMusicStore;Persist Security Info=False;User ID=servadmin;Password=1q2w3e4r%T;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\juttb\\source\\repos\\MvcMusicStore\\mvcmusicstore\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='UserDBConnection']/@connectionString" />
+  </parameter>
+</parameters>

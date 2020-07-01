@@ -1,0 +1,557 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F70C69CD-C8D8-48BD-B67A-87009C761B6D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>mvcmusicstore</RootNamespace>
+    <AssemblyName>mvcmusicstore</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44385</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Configuration.ConfigurationBuilders.Base, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Configuration.ConfigurationBuilders.Base.2.0.0\lib\Net471\Microsoft.Configuration.ConfigurationBuilders.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Configuration.ConfigurationBuilders.UserSecrets, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.2.0.0\lib\Net471\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebMatrix.Data, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.3.2.7\lib\net45\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.3.2.7\lib\net45\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Images\Album\386.png" />
+    <Content Include="Content\Images\Album\387.png" />
+    <Content Include="Content\Images\Album\388.png" />
+    <Content Include="Content\Images\Album\389.png" />
+    <Content Include="Content\Images\Album\390.png" />
+    <Content Include="Content\Images\Album\391.png" />
+    <Content Include="Content\Images\Album\392.png" />
+    <Content Include="Content\Images\Album\393.png" />
+    <Content Include="Content\Images\Album\394.png" />
+    <Content Include="Content\Images\Album\395.png" />
+    <Content Include="Content\Images\Album\396.png" />
+    <Content Include="Content\Images\Album\397.png" />
+    <Content Include="Content\Images\Album\398.png" />
+    <Content Include="Content\Images\Album\399.png" />
+    <Content Include="Content\Images\Album\400.png" />
+    <Content Include="Content\Images\Album\401.png" />
+    <Content Include="Content\Images\Album\402.png" />
+    <Content Include="Content\Images\Album\403.png" />
+    <Content Include="Content\Images\Album\404.png" />
+    <Content Include="Content\Images\Album\405.png" />
+    <Content Include="Content\Images\Album\406.png" />
+    <Content Include="Content\Images\Album\407.png" />
+    <Content Include="Content\Images\Album\408.png" />
+    <Content Include="Content\Images\Album\409.png" />
+    <Content Include="Content\Images\Album\410.png" />
+    <Content Include="Content\Images\Album\411.png" />
+    <Content Include="Content\Images\Album\412.png" />
+    <Content Include="Content\Images\Album\413.png" />
+    <Content Include="Content\Images\Album\414.png" />
+    <Content Include="Content\Images\Album\415.png" />
+    <Content Include="Content\Images\Album\416.png" />
+    <Content Include="Content\Images\Album\417.png" />
+    <Content Include="Content\Images\Album\418.png" />
+    <Content Include="Content\Images\Album\419.png" />
+    <Content Include="Content\Images\Album\420.png" />
+    <Content Include="Content\Images\Album\421.png" />
+    <Content Include="Content\Images\Album\422.png" />
+    <Content Include="Content\Images\Album\423.png" />
+    <Content Include="Content\Images\Album\424.png" />
+    <Content Include="Content\Images\Album\425.png" />
+    <Content Include="Content\Images\Album\426.png" />
+    <Content Include="Content\Images\Album\427.png" />
+    <Content Include="Content\Images\Album\428.png" />
+    <Content Include="Content\Images\Album\429.png" />
+    <Content Include="Content\Images\Album\430.png" />
+    <Content Include="Content\Images\Album\431.png" />
+    <Content Include="Content\Images\Album\432.png" />
+    <Content Include="Content\Images\Album\433.png" />
+    <Content Include="Content\Images\Album\434.png" />
+    <Content Include="Content\Images\Album\435.png" />
+    <Content Include="Content\Images\Album\436.png" />
+    <Content Include="Content\Images\Album\437.png" />
+    <Content Include="Content\Images\Album\438.png" />
+    <Content Include="Content\Images\Album\439.png" />
+    <Content Include="Content\Images\Album\440.png" />
+    <Content Include="Content\Images\Album\441.png" />
+    <Content Include="Content\Images\Album\442.png" />
+    <Content Include="Content\Images\Album\443.png" />
+    <Content Include="Content\Images\Album\444.png" />
+    <Content Include="Content\Images\Album\445.png" />
+    <Content Include="Content\Images\Album\446.png" />
+    <Content Include="Content\Images\Album\447.png" />
+    <Content Include="Content\Images\Album\448.png" />
+    <Content Include="Content\Images\Album\449.png" />
+    <Content Include="Content\Images\Album\450.png" />
+    <Content Include="Content\Images\Album\451.png" />
+    <Content Include="Content\Images\Album\452.png" />
+    <Content Include="Content\Images\Album\453.png" />
+    <Content Include="Content\Images\Album\454.png" />
+    <Content Include="Content\Images\Album\455.png" />
+    <Content Include="Content\Images\Album\456.png" />
+    <Content Include="Content\Images\Album\457.png" />
+    <Content Include="Content\Images\Album\458.png" />
+    <Content Include="Content\Images\Album\459.png" />
+    <Content Include="Content\Images\Album\460.png" />
+    <Content Include="Content\Images\Album\461.png" />
+    <Content Include="Content\Images\Album\462.png" />
+    <Content Include="Content\Images\Album\463.png" />
+    <Content Include="Content\Images\Album\464.png" />
+    <Content Include="Content\Images\Album\465.png" />
+    <Content Include="Content\Images\Album\466.png" />
+    <Content Include="Content\Images\Album\467.png" />
+    <Content Include="Content\Images\Album\468.png" />
+    <Content Include="Content\Images\Album\469.png" />
+    <Content Include="Content\Images\Album\470.png" />
+    <Content Include="Content\Images\Album\471.png" />
+    <Content Include="Content\Images\Album\472.png" />
+    <Content Include="Content\Images\Album\473.png" />
+    <Content Include="Content\Images\Album\474.png" />
+    <Content Include="Content\Images\Album\475.png" />
+    <Content Include="Content\Images\Album\476.png" />
+    <Content Include="Content\Images\Album\477.png" />
+    <Content Include="Content\Images\Album\478.png" />
+    <Content Include="Content\Images\Album\479.png" />
+    <Content Include="Content\Images\Album\480.png" />
+    <Content Include="Content\Images\Album\481.png" />
+    <Content Include="Content\Images\Album\482.png" />
+    <Content Include="Content\Images\Album\483.png" />
+    <Content Include="Content\Images\Album\484.png" />
+    <Content Include="Content\Images\Album\485.png" />
+    <Content Include="Content\Images\Album\486.png" />
+    <Content Include="Content\Images\Album\487.png" />
+    <Content Include="Content\Images\Album\488.png" />
+    <Content Include="Content\Images\Album\489.png" />
+    <Content Include="Content\Images\Album\490.png" />
+    <Content Include="Content\Images\Album\491.png" />
+    <Content Include="Content\Images\Album\492.png" />
+    <Content Include="Content\Images\Album\493.png" />
+    <Content Include="Content\Images\Album\494.png" />
+    <Content Include="Content\Images\Album\495.png" />
+    <Content Include="Content\Images\Album\496.png" />
+    <Content Include="Content\Images\Album\497.png" />
+    <Content Include="Content\Images\Album\498.png" />
+    <Content Include="Content\Images\Album\499.png" />
+    <Content Include="Content\Images\Album\500.png" />
+    <Content Include="Content\Images\Album\501.png" />
+    <Content Include="Content\Images\Album\502.png" />
+    <Content Include="Content\Images\Album\503.png" />
+    <Content Include="Content\Images\Album\504.png" />
+    <Content Include="Content\Images\Album\505.png" />
+    <Content Include="Content\Images\Album\506.png" />
+    <Content Include="Content\Images\Album\507.png" />
+    <Content Include="Content\Images\Album\508.png" />
+    <Content Include="Content\Images\Album\509.png" />
+    <Content Include="Content\Images\Album\510.png" />
+    <Content Include="Content\Images\Album\511.png" />
+    <Content Include="Content\Images\Album\512.png" />
+    <Content Include="Content\Images\Album\513.png" />
+    <Content Include="Content\Images\Album\514.png" />
+    <Content Include="Content\Images\Album\515.png" />
+    <Content Include="Content\Images\Album\516.png" />
+    <Content Include="Content\Images\Album\517.png" />
+    <Content Include="Content\Images\Album\518.png" />
+    <Content Include="Content\Images\Album\519.png" />
+    <Content Include="Content\Images\Album\520.png" />
+    <Content Include="Content\Images\Album\521.png" />
+    <Content Include="Content\Images\Album\522.png" />
+    <Content Include="Content\Images\Album\523.png" />
+    <Content Include="Content\Images\Album\524.png" />
+    <Content Include="Content\Images\Album\525.png" />
+    <Content Include="Content\Images\Album\526.png" />
+    <Content Include="Content\Images\Album\527.png" />
+    <Content Include="Content\Images\Album\528.png" />
+    <Content Include="Content\Images\Album\529.png" />
+    <Content Include="Content\Images\Album\530.png" />
+    <Content Include="Content\Images\Album\531.png" />
+    <Content Include="Content\Images\Album\532.png" />
+    <Content Include="Content\Images\Album\533.png" />
+    <Content Include="Content\Images\Album\534.png" />
+    <Content Include="Content\Images\Album\535.png" />
+    <Content Include="Content\Images\Album\536.png" />
+    <Content Include="Content\Images\Album\537.png" />
+    <Content Include="Content\Images\Album\538.png" />
+    <Content Include="Content\Images\Album\539.png" />
+    <Content Include="Content\Images\Album\540.png" />
+    <Content Include="Content\Images\Album\541.png" />
+    <Content Include="Content\Images\Album\542.png" />
+    <Content Include="Content\Images\Album\543.png" />
+    <Content Include="Content\Images\Album\544.png" />
+    <Content Include="Content\Images\Album\545.png" />
+    <Content Include="Content\Images\Album\546.png" />
+    <Content Include="Content\Images\Album\547.png" />
+    <Content Include="Content\Images\Album\548.png" />
+    <Content Include="Content\Images\Album\549.png" />
+    <Content Include="Content\Images\Album\550.png" />
+    <Content Include="Content\Images\Album\551.png" />
+    <Content Include="Content\Images\Album\552.png" />
+    <Content Include="Content\Images\Album\553.png" />
+    <Content Include="Content\Images\Album\554.png" />
+    <Content Include="Content\Images\Album\555.png" />
+    <Content Include="Content\Images\Album\556.png" />
+    <Content Include="Content\Images\Album\557.png" />
+    <Content Include="Content\Images\Album\558.png" />
+    <Content Include="Content\Images\Album\559.png" />
+    <Content Include="Content\Images\Album\560.png" />
+    <Content Include="Content\Images\Album\561.png" />
+    <Content Include="Content\Images\Album\562.png" />
+    <Content Include="Content\Images\Album\563.png" />
+    <Content Include="Content\Images\Album\564.png" />
+    <Content Include="Content\Images\Album\565.png" />
+    <Content Include="Content\Images\Album\566.png" />
+    <Content Include="Content\Images\Album\567.png" />
+    <Content Include="Content\Images\Album\568.png" />
+    <Content Include="Content\Images\Album\569.png" />
+    <Content Include="Content\Images\Album\570.png" />
+    <Content Include="Content\Images\Album\571.png" />
+    <Content Include="Content\Images\Album\572.png" />
+    <Content Include="Content\Images\Album\573.png" />
+    <Content Include="Content\Images\Album\574.png" />
+    <Content Include="Content\Images\Album\575.png" />
+    <Content Include="Content\Images\Album\576.png" />
+    <Content Include="Content\Images\Album\577.png" />
+    <Content Include="Content\Images\Album\578.png" />
+    <Content Include="Content\Images\Album\579.png" />
+    <Content Include="Content\Images\Album\580.png" />
+    <Content Include="Content\Images\Album\581.png" />
+    <Content Include="Content\Images\Album\582.png" />
+    <Content Include="Content\Images\Album\583.png" />
+    <Content Include="Content\Images\Album\584.png" />
+    <Content Include="Content\Images\Album\585.png" />
+    <Content Include="Content\Images\Album\586.png" />
+    <Content Include="Content\Images\Album\587.png" />
+    <Content Include="Content\Images\Album\588.png" />
+    <Content Include="Content\Images\Album\589.png" />
+    <Content Include="Content\Images\Album\590.png" />
+    <Content Include="Content\Images\Album\591.png" />
+    <Content Include="Content\Images\Album\592.png" />
+    <Content Include="Content\Images\Album\593.png" />
+    <Content Include="Content\Images\Album\594.png" />
+    <Content Include="Content\Images\Album\595.png" />
+    <Content Include="Content\Images\Album\596.png" />
+    <Content Include="Content\Images\Album\597.png" />
+    <Content Include="Content\Images\Album\598.png" />
+    <Content Include="Content\Images\Album\599.png" />
+    <Content Include="Content\Images\Album\600.png" />
+    <Content Include="Content\Images\Album\601.png" />
+    <Content Include="Content\Images\Album\602.png" />
+    <Content Include="Content\Images\Album\603.png" />
+    <Content Include="Content\Images\Album\604.png" />
+    <Content Include="Content\Images\Album\605.png" />
+    <Content Include="Content\Images\Album\606.png" />
+    <Content Include="Content\Images\Album\607.png" />
+    <Content Include="Content\Images\Album\608.png" />
+    <Content Include="Content\Images\Album\609.png" />
+    <Content Include="Content\Images\Album\610.png" />
+    <Content Include="Content\Images\Album\611.png" />
+    <Content Include="Content\Images\Album\612.png" />
+    <Content Include="Content\Images\Album\613.png" />
+    <Content Include="Content\Images\Album\614.png" />
+    <Content Include="Content\Images\Album\615.png" />
+    <Content Include="Content\Images\Album\616.png" />
+    <Content Include="Content\Images\Album\617.png" />
+    <Content Include="Content\Images\Album\618.png" />
+    <Content Include="Content\Images\Album\619.png" />
+    <Content Include="Content\Images\Album\620.png" />
+    <Content Include="Content\Images\Album\621.png" />
+    <Content Include="Content\Images\Album\622.png" />
+    <Content Include="Content\Images\Album\623.png" />
+    <Content Include="Content\Images\Album\624.png" />
+    <Content Include="Content\Images\Album\625.png" />
+    <Content Include="Content\Images\Album\626.png" />
+    <Content Include="Content\Images\Album\627.png" />
+    <Content Include="Content\Images\Album\628.png" />
+    <Content Include="Content\Images\Album\629.png" />
+    <Content Include="Content\Images\Album\630.png" />
+    <Content Include="Content\Images\Album\631.png" />
+    <Content Include="Content\Images\Album\632.png" />
+    <Content Include="Content\Images\Album\633.png" />
+    <Content Include="Content\Images\Album\634.png" />
+    <Content Include="Content\Images\Album\635.png" />
+    <Content Include="Content\Images\Album\636.png" />
+    <Content Include="Content\Images\Album\637.png" />
+    <Content Include="Content\Images\Album\638.png" />
+    <Content Include="Content\Images\Album\639.png" />
+    <Content Include="Content\Images\Album\640.png" />
+    <Content Include="Content\Images\Album\641.png" />
+    <Content Include="Content\Images\Album\642.png" />
+    <Content Include="Content\Images\Album\643.png" />
+    <Content Include="Content\Images\Album\644.png" />
+    <Content Include="Content\Images\Album\645.png" />
+    <Content Include="Content\Images\Album\646.png" />
+    <Content Include="Content\Images\Album\647.png" />
+    <Content Include="Content\Images\Album\648.png" />
+    <Content Include="Content\Images\Album\649.png" />
+    <Content Include="Content\Images\Album\650.png" />
+    <Content Include="Content\Images\Album\651.png" />
+    <Content Include="Content\Images\Album\652.png" />
+    <Content Include="Content\Images\Album\653.png" />
+    <Content Include="Content\Images\Album\654.png" />
+    <Content Include="Content\Images\Album\655.png" />
+    <Content Include="Content\Images\Album\656.png" />
+    <Content Include="Content\Images\Album\657.png" />
+    <Content Include="Content\Images\Album\658.png" />
+    <Content Include="Content\Images\Album\659.png" />
+    <Content Include="Content\Images\Album\660.png" />
+    <Content Include="Content\Images\Album\661.png" />
+    <Content Include="Content\Images\Album\662.png" />
+    <Content Include="Content\Images\Album\663.png" />
+    <Content Include="Content\Images\Album\664.png" />
+    <Content Include="Content\Images\Album\665.png" />
+    <Content Include="Content\Images\Album\666.png" />
+    <Content Include="Content\Images\Album\667.png" />
+    <Content Include="Content\Images\Album\668.png" />
+    <Content Include="Content\Images\Album\669.png" />
+    <Content Include="Content\Images\Album\CakeBSidesandRarities.jpg" />
+    <Content Include="Content\Images\home-showcase.png" />
+    <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\placeholder.gif" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\hwmvc-stage - Web Deploy.pubxml" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Views\Store\Details.cshtml" />
+    <Content Include="Views\Store\Browse.cshtml" />
+    <Content Include="Views\Store\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CheckoutController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
+    <Compile Include="Controllers\StoreController.cs" />
+    <Compile Include="Controllers\StoreManagerController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Album.cs" />
+    <Compile Include="Models\Artist.cs" />
+    <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\Genre.cs" />
+    <Compile Include="Models\MusicStoreEntities.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetail.cs" />
+    <Compile Include="Models\ShoppingCart.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ShoppingCartRemoveViewModel.cs" />
+    <Compile Include="ViewModels\ShoppingCartViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Store\GenreMenu.cshtml" />
+    <Content Include="Views\ShoppingCart\CartSummary.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
+    <Content Include="Views\Checkout\AddressAndPayment.cshtml" />
+    <Content Include="Views\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
+    <Content Include="Views\Account\LogOn.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\StoreManager\Create.cshtml" />
+    <Content Include="Views\StoreManager\Delete.cshtml" />
+    <Content Include="Views\StoreManager\Details.cshtml" />
+    <Content Include="Views\StoreManager\Edit.cshtml" />
+    <Content Include="Views\StoreManager\Index.cshtml" />
+    <Content Include="Views\Checkout\Complete.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>8958</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44385/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
